@@ -1,0 +1,5 @@
+package: sonarqube
+output: pkg/sonarqube/client.go
+generate:
+  models: true
+  client: true

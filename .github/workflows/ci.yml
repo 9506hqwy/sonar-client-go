@@ -64,21 +64,21 @@ jobs:
         go tool cover --func=cover.out
         go tool cover --func=cover.out > $env:GITHUB_STEP_SUMMARY
 
-    - name: Create Artifacts (Ubuntu)
-      if: matrix.os == 'ubuntu-latest'
-      run: |
-        for CMD in $(ls ./cmd)
-        do
-          go build -trimpath -o "./bin/${CMD}" "./cmd/${CMD}"
-        done
+    #- name: Create Artifacts (Ubuntu)
+    #  if: matrix.os == 'ubuntu-latest'
+    #  run: |
+    #    for CMD in $(ls ./cmd)
+    #    do
+    #      go build -trimpath -o "./bin/${CMD}" "./cmd/${CMD}"
+    #    done
 
-    - name: Create Artifacts (Windows)
-      if: matrix.os == 'windows-latest'
-      run: |
-        Get-ChildItem .\cmd -Directory |% {
-          $Name = $_.Name;
-          go build -trimpath -o ".\bin\${Name}.exe" ".\cmd\$Name"
-        }
+    #- name: Create Artifacts (Windows)
+    #  if: matrix.os == 'windows-latest'
+    #  run: |
+    #    Get-ChildItem .\cmd -Directory |% {
+    #      $Name = $_.Name;
+    #      go build -trimpath -o ".\bin\${Name}.exe" ".\cmd\$Name"
+    #    }
 
     - name: Create Archive (Ubuntu)
       if: matrix.os == 'ubuntu-latest'
