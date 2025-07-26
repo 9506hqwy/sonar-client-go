@@ -3,7 +3,7 @@ set -euo pipefail
 
 VERSION=v9.9
 
-BASE_DIR=$(dirname $(dirname "$0"))
+BASE_DIR=$(dirname "$(dirname "$0")")
 TMP_DIR=/tmp
 
 curl -fsSL \
