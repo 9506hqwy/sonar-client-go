@@ -13,6 +13,7 @@ curl -fsSL \
 # shellcheck disable=SC2016
 cat "${TMP_DIR}/openapi-orig.yml" | \
     yq '.. |= select(has("parameters")) |= .parameters |= map(.description as $x | .x-oapi-codegen-extra-tags.jsonschema = "description=" + $x)' | \
+    yq '.. |= select(has("x-oapi-codegen-extra-tags")) |= .x-oapi-codegen-extra-tags |= .jsonschema |= sub(",", "\\\\,")' | \
     yq '.. |= select(has("x-oapi-codegen-extra-tags")) |= .x-oapi-codegen-extra-tags |= .jsonschema |= trim' | \
     yq '.. |= select(has("x-oapi-codegen-extra-tags")) |= .x-oapi-codegen-extra-tags |= .jsonschema |= sub("\"", "\\\"")' \
     > "${TMP_DIR}/openapi.yml"

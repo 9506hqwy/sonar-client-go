@@ -305,7 +305,7 @@ type ApiAlmSettingsValidateParams struct {
 // ApiAnalysisCacheGetParams defines parameters for ApiAnalysisCacheGet.
 type ApiAnalysisCacheGetParams struct {
 	// Branch Branch key. If not provided, main branch will be used.
-	Branch *string `form:"branch,omitempty" json:"branch,omitempty" jsonschema:"description=Branch key. If not provided, main branch will be used."`
+	Branch *string `form:"branch,omitempty" json:"branch,omitempty" jsonschema:"description=Branch key. If not provided\\, main branch will be used."`
 
 	// Project Project key
 	Project string `form:"project" json:"project" jsonschema:"description=Project key"`
@@ -434,7 +434,7 @@ type ApiComponentsTreeParams struct {
 	S *string `form:"s,omitempty" json:"s,omitempty" jsonschema:"description=Comma-separated list of sort fields"`
 
 	// Strategy Strategy to search for base component descendants:<ul><li>children: return the children components of the base component. Grandchildren components are not returned</li><li>all: return all the descendants components of the base component. Grandchildren are returned.</li><li>leaves: return all the descendant components (files, in general) which don't have other children. They are the leaves of the component tree.</li></ul>
-	Strategy *string `form:"strategy,omitempty" json:"strategy,omitempty" jsonschema:"description=Strategy to search for base component descendants:<ul><li>children: return the children components of the base component. Grandchildren components are not returned</li><li>all: return all the descendants components of the base component. Grandchildren are returned.</li><li>leaves: return all the descendant components (files, in general) which don't have other children. They are the leaves of the component tree.</li></ul>"`
+	Strategy *string `form:"strategy,omitempty" json:"strategy,omitempty" jsonschema:"description=Strategy to search for base component descendants:<ul><li>children: return the children components of the base component. Grandchildren components are not returned</li><li>all: return all the descendants components of the base component. Grandchildren are returned.</li><li>leaves: return all the descendant components (files\\, in general) which don't have other children. They are the leaves of the component tree.</li></ul>"`
 }
 
 // ApiDuplicationsShowParams defines parameters for ApiDuplicationsShow.
@@ -446,7 +446,7 @@ type ApiDuplicationsShowParams struct {
 // ApiFavoritesAddParams defines parameters for ApiFavoritesAdd.
 type ApiFavoritesAddParams struct {
 	// Component Component key. Only components with qualifiers TRK, VW, SVW, APP are supported
-	Component string `form:"component" json:"component" jsonschema:"description=Component key. Only components with qualifiers TRK, VW, SVW, APP are supported"`
+	Component string `form:"component" json:"component" jsonschema:"description=Component key. Only components with qualifiers TRK\\, VW\\, SVW\\, APP are supported"`
 }
 
 // ApiFavoritesRemoveParams defines parameters for ApiFavoritesRemove.
@@ -479,10 +479,10 @@ type ApiHotspotsSearchParams struct {
 	Hotspots *string `form:"hotspots,omitempty" json:"hotspots,omitempty" jsonschema:"description=Comma-separated list of Security Hotspot keys. This parameter is required unless projectKey is provided."`
 
 	// InNewCodePeriod If 'inNewCodePeriod' is provided, only Security Hotspots created in the new code period are returned.
-	InNewCodePeriod *string `form:"inNewCodePeriod,omitempty" json:"inNewCodePeriod,omitempty" jsonschema:"description=If 'inNewCodePeriod' is provided, only Security Hotspots created in the new code period are returned."`
+	InNewCodePeriod *string `form:"inNewCodePeriod,omitempty" json:"inNewCodePeriod,omitempty" jsonschema:"description=If 'inNewCodePeriod' is provided\\, only Security Hotspots created in the new code period are returned."`
 
 	// OnlyMine If 'projectKey' is provided, returns only Security Hotspots assigned to the current user
-	OnlyMine *string `form:"onlyMine,omitempty" json:"onlyMine,omitempty" jsonschema:"description=If 'projectKey' is provided, returns only Security Hotspots assigned to the current user"`
+	OnlyMine *string `form:"onlyMine,omitempty" json:"onlyMine,omitempty" jsonschema:"description=If 'projectKey' is provided\\, returns only Security Hotspots assigned to the current user"`
 
 	// OwaspAsvs40 Comma-separated list of OWASP ASVS v4.0 categories or rules.
 	OwaspAsvs40 *string `form:"owaspAsvs-4.0,omitempty" json:"owaspAsvs-4.0,omitempty" jsonschema:"description=Comma-separated list of OWASP ASVS v4.0 categories or rules."`
@@ -515,7 +515,7 @@ type ApiHotspotsSearchParams struct {
 	PullRequest *string `form:"pullRequest,omitempty" json:"pullRequest,omitempty" jsonschema:"description=Pull request id. Not available in the community edition."`
 
 	// Resolution If 'projectKey' is provided and if status is 'REVIEWED', only Security Hotspots with the specified resolution are returned.
-	Resolution *string `form:"resolution,omitempty" json:"resolution,omitempty" jsonschema:"description=If 'projectKey' is provided and if status is 'REVIEWED', only Security Hotspots with the specified resolution are returned."`
+	Resolution *string `form:"resolution,omitempty" json:"resolution,omitempty" jsonschema:"description=If 'projectKey' is provided and if status is 'REVIEWED'\\, only Security Hotspots with the specified resolution are returned."`
 
 	// SansTop25 Comma-separated list of SANS Top 25 categories.
 	SansTop25 *string `form:"sansTop25,omitempty" json:"sansTop25,omitempty" jsonschema:"description=Comma-separated list of SANS Top 25 categories."`
@@ -524,7 +524,7 @@ type ApiHotspotsSearchParams struct {
 	SonarsourceSecurity *string `form:"sonarsourceSecurity,omitempty" json:"sonarsourceSecurity,omitempty" jsonschema:"description=Comma-separated list of SonarSource security categories. Use 'others' to select issues not associated with any category"`
 
 	// Status If 'projectKey' is provided, only Security Hotspots with the specified status are returned.
-	Status *string `form:"status,omitempty" json:"status,omitempty" jsonschema:"description=If 'projectKey' is provided, only Security Hotspots with the specified status are returned."`
+	Status *string `form:"status,omitempty" json:"status,omitempty" jsonschema:"description=If 'projectKey' is provided\\, only Security Hotspots with the specified status are returned."`
 }
 
 // ApiHotspotsShowParams defines parameters for ApiHotspotsShow.
@@ -545,7 +545,7 @@ type ApiIssuesAddCommentParams struct {
 // ApiIssuesAssignParams defines parameters for ApiIssuesAssign.
 type ApiIssuesAssignParams struct {
 	// Assignee Login of the assignee. When not set, it will unassign the issue. Use '_me' to assign to current user
-	Assignee *string `form:"assignee,omitempty" json:"assignee,omitempty" jsonschema:"description=Login of the assignee. When not set, it will unassign the issue. Use '_me' to assign to current user"`
+	Assignee *string `form:"assignee,omitempty" json:"assignee,omitempty" jsonschema:"description=Login of the assignee. When not set\\, it will unassign the issue. Use '_me' to assign to current user"`
 
 	// Issue Issue key
 	Issue string `form:"issue" json:"issue" jsonschema:"description=Issue key"`
@@ -569,7 +569,7 @@ type ApiIssuesBulkChangeParams struct {
 	AddTags *string `form:"add_tags,omitempty" json:"add_tags,omitempty" jsonschema:"description=Add tags"`
 
 	// Assign To assign the list of issues to a specific user (login), or un-assign all the issues
-	Assign *string `form:"assign,omitempty" json:"assign,omitempty" jsonschema:"description=To assign the list of issues to a specific user (login), or un-assign all the issues"`
+	Assign *string `form:"assign,omitempty" json:"assign,omitempty" jsonschema:"description=To assign the list of issues to a specific user (login)\\, or un-assign all the issues"`
 
 	// Comment Add a comment. The comment will only be added to issues that are affected either by a change of type or a change of severity as a result of the same WS call.
 	Comment *string `form:"comment,omitempty" json:"comment,omitempty" jsonschema:"description=Add a comment. The comment will only be added to issues that are affected either by a change of type or a change of severity as a result of the same WS call."`
@@ -632,7 +632,7 @@ type ApiIssuesReindexParams struct {
 // ApiIssuesSearchParams defines parameters for ApiIssuesSearch.
 type ApiIssuesSearchParams struct {
 	// AdditionalFields Comma-separated list of the optional fields to be returned in response. Action plans are dropped in 5.5, it is not returned in the response.
-	AdditionalFields *string `form:"additionalFields,omitempty" json:"additionalFields,omitempty" jsonschema:"description=Comma-separated list of the optional fields to be returned in response. Action plans are dropped in 5.5, it is not returned in the response."`
+	AdditionalFields *string `form:"additionalFields,omitempty" json:"additionalFields,omitempty" jsonschema:"description=Comma-separated list of the optional fields to be returned in response. Action plans are dropped in 5.5\\, it is not returned in the response."`
 
 	// Asc Ascending sort
 	Asc *string `form:"asc,omitempty" json:"asc,omitempty" jsonschema:"description=Ascending sort"`
@@ -644,16 +644,16 @@ type ApiIssuesSearchParams struct {
 	Assignees *string `form:"assignees,omitempty" json:"assignees,omitempty" jsonschema:"description=Comma-separated list of assignee logins. The value '__me__' can be used as a placeholder for user who performs the request"`
 
 	// Author SCM accounts. To set several values, the parameter must be called once for each value.
-	Author *string `form:"author,omitempty" json:"author,omitempty" jsonschema:"description=SCM accounts. To set several values, the parameter must be called once for each value."`
+	Author *string `form:"author,omitempty" json:"author,omitempty" jsonschema:"description=SCM accounts. To set several values\\, the parameter must be called once for each value."`
 
 	// Branch Branch key. Not available in the community edition.
 	Branch *string `form:"branch,omitempty" json:"branch,omitempty" jsonschema:"description=Branch key. Not available in the community edition."`
 
 	// ComponentKeys Comma-separated list of component keys. Retrieve issues associated to a specific list of components (and all its descendants). A component can be a portfolio, project, module, directory or file.
-	ComponentKeys *string `form:"componentKeys,omitempty" json:"componentKeys,omitempty" jsonschema:"description=Comma-separated list of component keys. Retrieve issues associated to a specific list of components (and all its descendants). A component can be a portfolio, project, module, directory or file."`
+	ComponentKeys *string `form:"componentKeys,omitempty" json:"componentKeys,omitempty" jsonschema:"description=Comma-separated list of component keys. Retrieve issues associated to a specific list of components (and all its descendants). A component can be a portfolio\\, project\\, module\\, directory or file."`
 
 	// CreatedAfter To retrieve issues created after the given date (inclusive). <br>Either a date (use 'timeZone' attribute or it will default to server timezone) or datetime can be provided. <br>If this parameter is set, createdInLast must not be set
-	CreatedAfter *string `form:"createdAfter,omitempty" json:"createdAfter,omitempty" jsonschema:"description=To retrieve issues created after the given date (inclusive). <br>Either a date (use 'timeZone' attribute or it will default to server timezone) or datetime can be provided. <br>If this parameter is set, createdInLast must not be set"`
+	CreatedAfter *string `form:"createdAfter,omitempty" json:"createdAfter,omitempty" jsonschema:"description=To retrieve issues created after the given date (inclusive). <br>Either a date (use 'timeZone' attribute or it will default to server timezone) or datetime can be provided. <br>If this parameter is set\\, createdInLast must not be set"`
 
 	// CreatedAt Datetime to retrieve issues created during a specific analysis
 	CreatedAt *string `form:"createdAt,omitempty" json:"createdAt,omitempty" jsonschema:"description=Datetime to retrieve issues created during a specific analysis"`
@@ -662,7 +662,7 @@ type ApiIssuesSearchParams struct {
 	CreatedBefore *string `form:"createdBefore,omitempty" json:"createdBefore,omitempty" jsonschema:"description=To retrieve issues created before the given date (exclusive). <br>Either a date (use 'timeZone' attribute or it will default to server timezone) or datetime can be provided."`
 
 	// CreatedInLast To retrieve issues created during a time span before the current time (exclusive). Accepted units are 'y' for year, 'm' for month, 'w' for week and 'd' for day. If this parameter is set, createdAfter must not be set
-	CreatedInLast *string `form:"createdInLast,omitempty" json:"createdInLast,omitempty" jsonschema:"description=To retrieve issues created during a time span before the current time (exclusive). Accepted units are 'y' for year, 'm' for month, 'w' for week and 'd' for day. If this parameter is set, createdAfter must not be set"`
+	CreatedInLast *string `form:"createdInLast,omitempty" json:"createdInLast,omitempty" jsonschema:"description=To retrieve issues created during a time span before the current time (exclusive). Accepted units are 'y' for year\\, 'm' for month\\, 'w' for week and 'd' for day. If this parameter is set\\, createdAfter must not be set"`
 
 	// Cwe Comma-separated list of CWE identifiers. Use 'unknown' to select issues not associated to any CWE.
 	Cwe *string `form:"cwe,omitempty" json:"cwe,omitempty" jsonschema:"description=Comma-separated list of CWE identifiers. Use 'unknown' to select issues not associated to any CWE."`
@@ -671,7 +671,7 @@ type ApiIssuesSearchParams struct {
 	Facets *string `form:"facets,omitempty" json:"facets,omitempty" jsonschema:"description=Comma-separated list of the facets to be computed. No facet is computed by default."`
 
 	// InNewCodePeriod To retrieve issues created in the new code period.<br>If this parameter is set to a truthy value, createdAfter must not be set and one component uuid or key must be provided.
-	InNewCodePeriod *string `form:"inNewCodePeriod,omitempty" json:"inNewCodePeriod,omitempty" jsonschema:"description=To retrieve issues created in the new code period.<br>If this parameter is set to a truthy value, createdAfter must not be set and one component uuid or key must be provided."`
+	InNewCodePeriod *string `form:"inNewCodePeriod,omitempty" json:"inNewCodePeriod,omitempty" jsonschema:"description=To retrieve issues created in the new code period.<br>If this parameter is set to a truthy value\\, createdAfter must not be set and one component uuid or key must be provided."`
 
 	// Issues Comma-separated list of issue keys
 	Issues *string `form:"issues,omitempty" json:"issues,omitempty" jsonschema:"description=Comma-separated list of issue keys"`
@@ -680,7 +680,7 @@ type ApiIssuesSearchParams struct {
 	Languages *string `form:"languages,omitempty" json:"languages,omitempty" jsonschema:"description=Comma-separated list of languages. Available since 4.4"`
 
 	// OnComponentOnly Return only issues at a component's level, not on its descendants (modules, directories, files, etc). This parameter is only considered when componentKeys is set.
-	OnComponentOnly *string `form:"onComponentOnly,omitempty" json:"onComponentOnly,omitempty" jsonschema:"description=Return only issues at a component's level, not on its descendants (modules, directories, files, etc). This parameter is only considered when componentKeys is set."`
+	OnComponentOnly *string `form:"onComponentOnly,omitempty" json:"onComponentOnly,omitempty" jsonschema:"description=Return only issues at a component's level\\, not on its descendants (modules\\, directories\\, files\\, etc). This parameter is only considered when componentKeys is set."`
 
 	// OwaspAsvs40 Comma-separated list of OWASP ASVS v4.0 categories.
 	OwaspAsvs40 *string `form:"owaspAsvs-4.0,omitempty" json:"owaspAsvs-4.0,omitempty" jsonschema:"description=Comma-separated list of OWASP ASVS v4.0 categories."`
@@ -731,7 +731,7 @@ type ApiIssuesSearchParams struct {
 	Severities *string `form:"severities,omitempty" json:"severities,omitempty" jsonschema:"description=Comma-separated list of severities"`
 
 	// SinceLeakPeriod To retrieve issues created since the leak period.<br>If this parameter is set to a truthy value, createdAfter must not be set and one component uuid or key must be provided.
-	SinceLeakPeriod *string `form:"sinceLeakPeriod,omitempty" json:"sinceLeakPeriod,omitempty" jsonschema:"description=To retrieve issues created since the leak period.<br>If this parameter is set to a truthy value, createdAfter must not be set and one component uuid or key must be provided."`
+	SinceLeakPeriod *string `form:"sinceLeakPeriod,omitempty" json:"sinceLeakPeriod,omitempty" jsonschema:"description=To retrieve issues created since the leak period.<br>If this parameter is set to a truthy value\\, createdAfter must not be set and one component uuid or key must be provided."`
 
 	// SonarsourceSecurity Comma-separated list of SonarSource security categories. Use 'others' to select issues not associated with any category
 	SonarsourceSecurity *string `form:"sonarsourceSecurity,omitempty" json:"sonarsourceSecurity,omitempty" jsonschema:"description=Comma-separated list of SonarSource security categories. Use 'others' to select issues not associated with any category"`
@@ -797,7 +797,7 @@ type ApiIssuesTagsParams struct {
 // ApiLanguagesListParams defines parameters for ApiLanguagesList.
 type ApiLanguagesListParams struct {
 	// Ps The size of the list to return, 0 for all languages
-	Ps *string `form:"ps,omitempty" json:"ps,omitempty" jsonschema:"description=The size of the list to return, 0 for all languages"`
+	Ps *string `form:"ps,omitempty" json:"ps,omitempty" jsonschema:"description=The size of the list to return\\, 0 for all languages"`
 
 	// Q A pattern to match language keys/names against
 	Q *string `form:"q,omitempty" json:"q,omitempty" jsonschema:"description=A pattern to match language keys/names against"`
@@ -836,7 +836,7 @@ type ApiMeasuresComponentTreeParams struct {
 	Component string `form:"component" json:"component" jsonschema:"description=Component key. The search is based on this component."`
 
 	// MetricKeys Comma-separated list of metric keys. Types DATA, DISTRIB are not allowed.
-	MetricKeys string `form:"metricKeys" json:"metricKeys" jsonschema:"description=Comma-separated list of metric keys. Types DATA, DISTRIB are not allowed."`
+	MetricKeys string `form:"metricKeys" json:"metricKeys" jsonschema:"description=Comma-separated list of metric keys. Types DATA\\, DISTRIB are not allowed."`
 
 	// MetricPeriodSort Sort measures by leak period or not ?. The 's' parameter must contain the 'metricPeriod' value.
 	MetricPeriodSort *string `form:"metricPeriodSort,omitempty" json:"metricPeriodSort,omitempty" jsonschema:"description=Sort measures by leak period or not ?. The 's' parameter must contain the 'metricPeriod' value."`
@@ -866,7 +866,7 @@ type ApiMeasuresComponentTreeParams struct {
 	S *string `form:"s,omitempty" json:"s,omitempty" jsonschema:"description=Comma-separated list of sort fields"`
 
 	// Strategy Strategy to search for base component descendants:<ul><li>children: return the children components of the base component. Grandchildren components are not returned</li><li>all: return all the descendants components of the base component. Grandchildren are returned.</li><li>leaves: return all the descendant components (files, in general) which don't have other children. They are the leaves of the component tree.</li></ul>
-	Strategy *string `form:"strategy,omitempty" json:"strategy,omitempty" jsonschema:"description=Strategy to search for base component descendants:<ul><li>children: return the children components of the base component. Grandchildren components are not returned</li><li>all: return all the descendants components of the base component. Grandchildren are returned.</li><li>leaves: return all the descendant components (files, in general) which don't have other children. They are the leaves of the component tree.</li></ul>"`
+	Strategy *string `form:"strategy,omitempty" json:"strategy,omitempty" jsonschema:"description=Strategy to search for base component descendants:<ul><li>children: return the children components of the base component. Grandchildren components are not returned</li><li>all: return all the descendants components of the base component. Grandchildren are returned.</li><li>leaves: return all the descendant components (files\\, in general) which don't have other children. They are the leaves of the component tree.</li></ul>"`
 }
 
 // ApiMeasuresSearchHistoryParams defines parameters for ApiMeasuresSearchHistory.
@@ -920,10 +920,10 @@ type ApiNewCodePeriodsSetParams struct {
 	Project *string `form:"project,omitempty" json:"project,omitempty" jsonschema:"description=Project key"`
 
 	// Type Type<br/>New code periods of the following types are allowed:<ul><li>SPECIFIC_ANALYSIS - can be set at branch level only</li><li>PREVIOUS_VERSION - can be set at any level (global, project, branch)</li><li>NUMBER_OF_DAYS - can be set at any level (global, project, branch)</li><li>REFERENCE_BRANCH - can only be set for projects and branches</li></ul>
-	Type string `form:"type" json:"type" jsonschema:"description=Type<br/>New code periods of the following types are allowed:<ul><li>SPECIFIC_ANALYSIS - can be set at branch level only</li><li>PREVIOUS_VERSION - can be set at any level (global, project, branch)</li><li>NUMBER_OF_DAYS - can be set at any level (global, project, branch)</li><li>REFERENCE_BRANCH - can only be set for projects and branches</li></ul>"`
+	Type string `form:"type" json:"type" jsonschema:"description=Type<br/>New code periods of the following types are allowed:<ul><li>SPECIFIC_ANALYSIS - can be set at branch level only</li><li>PREVIOUS_VERSION - can be set at any level (global\\, project\\, branch)</li><li>NUMBER_OF_DAYS - can be set at any level (global\\, project\\, branch)</li><li>REFERENCE_BRANCH - can only be set for projects and branches</li></ul>"`
 
 	// Value Value<br/>For each type, a different value is expected:<ul><li>the uuid of an analysis, when type is SPECIFIC_ANALYSIS</li><li>no value, when type is PREVIOUS_VERSION</li><li>a number, when type is NUMBER_OF_DAYS</li><li>a string, when type is REFERENCE_BRANCH</li></ul>
-	Value *string `form:"value,omitempty" json:"value,omitempty" jsonschema:"description=Value<br/>For each type, a different value is expected:<ul><li>the uuid of an analysis, when type is SPECIFIC_ANALYSIS</li><li>no value, when type is PREVIOUS_VERSION</li><li>a number, when type is NUMBER_OF_DAYS</li><li>a string, when type is REFERENCE_BRANCH</li></ul>"`
+	Value *string `form:"value,omitempty" json:"value,omitempty" jsonschema:"description=Value<br/>For each type\\, a different value is expected:<ul><li>the uuid of an analysis\\, when type is SPECIFIC_ANALYSIS</li><li>no value\\, when type is PREVIOUS_VERSION</li><li>a number\\, when type is NUMBER_OF_DAYS</li><li>a string\\, when type is REFERENCE_BRANCH</li></ul>"`
 }
 
 // ApiNewCodePeriodsShowParams defines parameters for ApiNewCodePeriodsShow.
@@ -947,7 +947,7 @@ type ApiNewCodePeriodsUnsetParams struct {
 // ApiNotificationsAddParams defines parameters for ApiNotificationsAdd.
 type ApiNotificationsAddParams struct {
 	// Channel Channel through which the notification is sent. For example, notifications can be sent by email.
-	Channel *string `form:"channel,omitempty" json:"channel,omitempty" jsonschema:"description=Channel through which the notification is sent. For example, notifications can be sent by email."`
+	Channel *string `form:"channel,omitempty" json:"channel,omitempty" jsonschema:"description=Channel through which the notification is sent. For example\\, notifications can be sent by email."`
 
 	// Login User login
 	Login *string `form:"login,omitempty" json:"login,omitempty" jsonschema:"description=User login"`
@@ -956,7 +956,7 @@ type ApiNotificationsAddParams struct {
 	Project *string `form:"project,omitempty" json:"project,omitempty" jsonschema:"description=Project key"`
 
 	// Type Notification type. Possible values are for:<ul> <li>Global notifications: CeReportTaskFailure, ChangesOnMyIssue, NewAlerts, SQ-MyNewIssues</li> <li>Per project notifications: CeReportTaskFailure, ChangesOnMyIssue, NewAlerts, NewFalsePositiveIssue, NewIssues, SQ-MyNewIssues</li></ul>
-	Type string `form:"type" json:"type" jsonschema:"description=Notification type. Possible values are for:<ul> <li>Global notifications: CeReportTaskFailure, ChangesOnMyIssue, NewAlerts, SQ-MyNewIssues</li> <li>Per project notifications: CeReportTaskFailure, ChangesOnMyIssue, NewAlerts, NewFalsePositiveIssue, NewIssues, SQ-MyNewIssues</li></ul>"`
+	Type string `form:"type" json:"type" jsonschema:"description=Notification type. Possible values are for:<ul> <li>Global notifications: CeReportTaskFailure\\, ChangesOnMyIssue\\, NewAlerts\\, SQ-MyNewIssues</li> <li>Per project notifications: CeReportTaskFailure\\, ChangesOnMyIssue\\, NewAlerts\\, NewFalsePositiveIssue\\, NewIssues\\, SQ-MyNewIssues</li></ul>"`
 }
 
 // ApiNotificationsListParams defines parameters for ApiNotificationsList.
@@ -968,7 +968,7 @@ type ApiNotificationsListParams struct {
 // ApiNotificationsRemoveParams defines parameters for ApiNotificationsRemove.
 type ApiNotificationsRemoveParams struct {
 	// Channel Channel through which the notification is sent. For example, notifications can be sent by email.
-	Channel *string `form:"channel,omitempty" json:"channel,omitempty" jsonschema:"description=Channel through which the notification is sent. For example, notifications can be sent by email."`
+	Channel *string `form:"channel,omitempty" json:"channel,omitempty" jsonschema:"description=Channel through which the notification is sent. For example\\, notifications can be sent by email."`
 
 	// Login User login
 	Login *string `form:"login,omitempty" json:"login,omitempty" jsonschema:"description=User login"`
@@ -977,19 +977,19 @@ type ApiNotificationsRemoveParams struct {
 	Project *string `form:"project,omitempty" json:"project,omitempty" jsonschema:"description=Project key"`
 
 	// Type Notification type. Possible values are for:<ul> <li>Global notifications: CeReportTaskFailure, ChangesOnMyIssue, NewAlerts, SQ-MyNewIssues</li> <li>Per project notifications: CeReportTaskFailure, ChangesOnMyIssue, NewAlerts, NewFalsePositiveIssue, NewIssues, SQ-MyNewIssues</li></ul>
-	Type string `form:"type" json:"type" jsonschema:"description=Notification type. Possible values are for:<ul> <li>Global notifications: CeReportTaskFailure, ChangesOnMyIssue, NewAlerts, SQ-MyNewIssues</li> <li>Per project notifications: CeReportTaskFailure, ChangesOnMyIssue, NewAlerts, NewFalsePositiveIssue, NewIssues, SQ-MyNewIssues</li></ul>"`
+	Type string `form:"type" json:"type" jsonschema:"description=Notification type. Possible values are for:<ul> <li>Global notifications: CeReportTaskFailure\\, ChangesOnMyIssue\\, NewAlerts\\, SQ-MyNewIssues</li> <li>Per project notifications: CeReportTaskFailure\\, ChangesOnMyIssue\\, NewAlerts\\, NewFalsePositiveIssue\\, NewIssues\\, SQ-MyNewIssues</li></ul>"`
 }
 
 // ApiPermissionsAddGroupParams defines parameters for ApiPermissionsAddGroup.
 type ApiPermissionsAddGroupParams struct {
 	// GroupId Group id, use 'name' param instead
-	GroupId *string `form:"groupId,omitempty" json:"groupId,omitempty" jsonschema:"description=Group id, use 'name' param instead"`
+	GroupId *string `form:"groupId,omitempty" json:"groupId,omitempty" jsonschema:"description=Group id\\, use 'name' param instead"`
 
 	// GroupName Group name or 'anyone' (case insensitive)
 	GroupName *string `form:"groupName,omitempty" json:"groupName,omitempty" jsonschema:"description=Group name or 'anyone' (case insensitive)"`
 
 	// Permission The permission you would like to grant to the group.<ul><li>Possible values for global permissions: admin, profileadmin, gateadmin, scan, provisioning</li><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul>
-	Permission string `form:"permission" json:"permission" jsonschema:"description=The permission you would like to grant to the group.<ul><li>Possible values for global permissions: admin, profileadmin, gateadmin, scan, provisioning</li><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul>"`
+	Permission string `form:"permission" json:"permission" jsonschema:"description=The permission you would like to grant to the group.<ul><li>Possible values for global permissions: admin\\, profileadmin\\, gateadmin\\, scan\\, provisioning</li><li>Possible values for project permissions admin\\, codeviewer\\, issueadmin\\, securityhotspotadmin\\, scan\\, user</li></ul>"`
 
 	// ProjectId Project id
 	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty" jsonschema:"description=Project id"`
@@ -1001,13 +1001,13 @@ type ApiPermissionsAddGroupParams struct {
 // ApiPermissionsAddGroupToTemplateParams defines parameters for ApiPermissionsAddGroupToTemplate.
 type ApiPermissionsAddGroupToTemplateParams struct {
 	// GroupId Group id, use 'name' param instead
-	GroupId *string `form:"groupId,omitempty" json:"groupId,omitempty" jsonschema:"description=Group id, use 'name' param instead"`
+	GroupId *string `form:"groupId,omitempty" json:"groupId,omitempty" jsonschema:"description=Group id\\, use 'name' param instead"`
 
 	// GroupName Group name or 'anyone' (case insensitive)
 	GroupName *string `form:"groupName,omitempty" json:"groupName,omitempty" jsonschema:"description=Group name or 'anyone' (case insensitive)"`
 
 	// Permission Permission<ul><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul>
-	Permission string `form:"permission" json:"permission" jsonschema:"description=Permission<ul><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul>"`
+	Permission string `form:"permission" json:"permission" jsonschema:"description=Permission<ul><li>Possible values for project permissions admin\\, codeviewer\\, issueadmin\\, securityhotspotadmin\\, scan\\, user</li></ul>"`
 
 	// TemplateId Template id
 	TemplateId *string `form:"templateId,omitempty" json:"templateId,omitempty" jsonschema:"description=Template id"`
@@ -1019,7 +1019,7 @@ type ApiPermissionsAddGroupToTemplateParams struct {
 // ApiPermissionsAddProjectCreatorToTemplateParams defines parameters for ApiPermissionsAddProjectCreatorToTemplate.
 type ApiPermissionsAddProjectCreatorToTemplateParams struct {
 	// Permission Permission<ul><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul>
-	Permission string `form:"permission" json:"permission" jsonschema:"description=Permission<ul><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul>"`
+	Permission string `form:"permission" json:"permission" jsonschema:"description=Permission<ul><li>Possible values for project permissions admin\\, codeviewer\\, issueadmin\\, securityhotspotadmin\\, scan\\, user</li></ul>"`
 
 	// TemplateId Template id
 	TemplateId *string `form:"templateId,omitempty" json:"templateId,omitempty" jsonschema:"description=Template id"`
@@ -1034,7 +1034,7 @@ type ApiPermissionsAddUserParams struct {
 	Login string `form:"login" json:"login" jsonschema:"description=User login"`
 
 	// Permission The permission you would like to grant to the user<ul><li>Possible values for global permissions: admin, profileadmin, gateadmin, scan, provisioning</li><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul>
-	Permission string `form:"permission" json:"permission" jsonschema:"description=The permission you would like to grant to the user<ul><li>Possible values for global permissions: admin, profileadmin, gateadmin, scan, provisioning</li><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul>"`
+	Permission string `form:"permission" json:"permission" jsonschema:"description=The permission you would like to grant to the user<ul><li>Possible values for global permissions: admin\\, profileadmin\\, gateadmin\\, scan\\, provisioning</li><li>Possible values for project permissions admin\\, codeviewer\\, issueadmin\\, securityhotspotadmin\\, scan\\, user</li></ul>"`
 
 	// ProjectId Project id
 	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty" jsonschema:"description=Project id"`
@@ -1049,7 +1049,7 @@ type ApiPermissionsAddUserToTemplateParams struct {
 	Login string `form:"login" json:"login" jsonschema:"description=User login"`
 
 	// Permission Permission<ul><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul>
-	Permission string `form:"permission" json:"permission" jsonschema:"description=Permission<ul><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul>"`
+	Permission string `form:"permission" json:"permission" jsonschema:"description=Permission<ul><li>Possible values for project permissions admin\\, codeviewer\\, issueadmin\\, securityhotspotadmin\\, scan\\, user</li></ul>"`
 
 	// TemplateId Template id
 	TemplateId *string `form:"templateId,omitempty" json:"templateId,omitempty" jsonschema:"description=Template id"`
@@ -1121,13 +1121,13 @@ type ApiPermissionsDeleteTemplateParams struct {
 // ApiPermissionsRemoveGroupParams defines parameters for ApiPermissionsRemoveGroup.
 type ApiPermissionsRemoveGroupParams struct {
 	// GroupId Group id, use 'name' param instead
-	GroupId *string `form:"groupId,omitempty" json:"groupId,omitempty" jsonschema:"description=Group id, use 'name' param instead"`
+	GroupId *string `form:"groupId,omitempty" json:"groupId,omitempty" jsonschema:"description=Group id\\, use 'name' param instead"`
 
 	// GroupName Group name or 'anyone' (case insensitive)
 	GroupName *string `form:"groupName,omitempty" json:"groupName,omitempty" jsonschema:"description=Group name or 'anyone' (case insensitive)"`
 
 	// Permission The permission you would like to revoke from the group.<ul><li>Possible values for global permissions: admin, profileadmin, gateadmin, scan, provisioning</li><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul>
-	Permission string `form:"permission" json:"permission" jsonschema:"description=The permission you would like to revoke from the group.<ul><li>Possible values for global permissions: admin, profileadmin, gateadmin, scan, provisioning</li><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul>"`
+	Permission string `form:"permission" json:"permission" jsonschema:"description=The permission you would like to revoke from the group.<ul><li>Possible values for global permissions: admin\\, profileadmin\\, gateadmin\\, scan\\, provisioning</li><li>Possible values for project permissions admin\\, codeviewer\\, issueadmin\\, securityhotspotadmin\\, scan\\, user</li></ul>"`
 
 	// ProjectId Project id
 	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty" jsonschema:"description=Project id"`
@@ -1139,13 +1139,13 @@ type ApiPermissionsRemoveGroupParams struct {
 // ApiPermissionsRemoveGroupFromTemplateParams defines parameters for ApiPermissionsRemoveGroupFromTemplate.
 type ApiPermissionsRemoveGroupFromTemplateParams struct {
 	// GroupId Group id, use 'name' param instead
-	GroupId *string `form:"groupId,omitempty" json:"groupId,omitempty" jsonschema:"description=Group id, use 'name' param instead"`
+	GroupId *string `form:"groupId,omitempty" json:"groupId,omitempty" jsonschema:"description=Group id\\, use 'name' param instead"`
 
 	// GroupName Group name or 'anyone' (case insensitive)
 	GroupName *string `form:"groupName,omitempty" json:"groupName,omitempty" jsonschema:"description=Group name or 'anyone' (case insensitive)"`
 
 	// Permission Permission<ul><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul>
-	Permission string `form:"permission" json:"permission" jsonschema:"description=Permission<ul><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul>"`
+	Permission string `form:"permission" json:"permission" jsonschema:"description=Permission<ul><li>Possible values for project permissions admin\\, codeviewer\\, issueadmin\\, securityhotspotadmin\\, scan\\, user</li></ul>"`
 
 	// TemplateId Template id
 	TemplateId *string `form:"templateId,omitempty" json:"templateId,omitempty" jsonschema:"description=Template id"`
@@ -1157,7 +1157,7 @@ type ApiPermissionsRemoveGroupFromTemplateParams struct {
 // ApiPermissionsRemoveProjectCreatorFromTemplateParams defines parameters for ApiPermissionsRemoveProjectCreatorFromTemplate.
 type ApiPermissionsRemoveProjectCreatorFromTemplateParams struct {
 	// Permission Permission<ul><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul>
-	Permission string `form:"permission" json:"permission" jsonschema:"description=Permission<ul><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul>"`
+	Permission string `form:"permission" json:"permission" jsonschema:"description=Permission<ul><li>Possible values for project permissions admin\\, codeviewer\\, issueadmin\\, securityhotspotadmin\\, scan\\, user</li></ul>"`
 
 	// TemplateId Template id
 	TemplateId *string `form:"templateId,omitempty" json:"templateId,omitempty" jsonschema:"description=Template id"`
@@ -1172,7 +1172,7 @@ type ApiPermissionsRemoveUserParams struct {
 	Login string `form:"login" json:"login" jsonschema:"description=User login"`
 
 	// Permission The permission you would like to revoke from the user.<ul><li>Possible values for global permissions: admin, profileadmin, gateadmin, scan, provisioning</li><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul>
-	Permission string `form:"permission" json:"permission" jsonschema:"description=The permission you would like to revoke from the user.<ul><li>Possible values for global permissions: admin, profileadmin, gateadmin, scan, provisioning</li><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul>"`
+	Permission string `form:"permission" json:"permission" jsonschema:"description=The permission you would like to revoke from the user.<ul><li>Possible values for global permissions: admin\\, profileadmin\\, gateadmin\\, scan\\, provisioning</li><li>Possible values for project permissions admin\\, codeviewer\\, issueadmin\\, securityhotspotadmin\\, scan\\, user</li></ul>"`
 
 	// ProjectId Project id
 	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty" jsonschema:"description=Project id"`
@@ -1187,7 +1187,7 @@ type ApiPermissionsRemoveUserFromTemplateParams struct {
 	Login string `form:"login" json:"login" jsonschema:"description=User login"`
 
 	// Permission Permission<ul><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul>
-	Permission string `form:"permission" json:"permission" jsonschema:"description=Permission<ul><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul>"`
+	Permission string `form:"permission" json:"permission" jsonschema:"description=Permission<ul><li>Possible values for project permissions admin\\, codeviewer\\, issueadmin\\, securityhotspotadmin\\, scan\\, user</li></ul>"`
 
 	// TemplateId Template id
 	TemplateId *string `form:"templateId,omitempty" json:"templateId,omitempty" jsonschema:"description=Template id"`
@@ -1481,16 +1481,16 @@ type ApiProjectsBulkDeleteParams struct {
 // ApiProjectsCreateParams defines parameters for ApiProjectsCreate.
 type ApiProjectsCreateParams struct {
 	// MainBranch Key of the main branch of the project. If not provided, the default main branch key will be used.
-	MainBranch *string `form:"mainBranch,omitempty" json:"mainBranch,omitempty" jsonschema:"description=Key of the main branch of the project. If not provided, the default main branch key will be used."`
+	MainBranch *string `form:"mainBranch,omitempty" json:"mainBranch,omitempty" jsonschema:"description=Key of the main branch of the project. If not provided\\, the default main branch key will be used."`
 
 	// Name Name of the project. If name is longer than 500, it is abbreviated.
-	Name string `form:"name" json:"name" jsonschema:"description=Name of the project. If name is longer than 500, it is abbreviated."`
+	Name string `form:"name" json:"name" jsonschema:"description=Name of the project. If name is longer than 500\\, it is abbreviated."`
 
 	// Project Key of the project
 	Project string `form:"project" json:"project" jsonschema:"description=Key of the project"`
 
 	// Visibility Whether the created project should be visible to everyone, or only specific user/groups.<br/>If no visibility is specified, the default project visibility will be used.
-	Visibility *string `form:"visibility,omitempty" json:"visibility,omitempty" jsonschema:"description=Whether the created project should be visible to everyone, or only specific user/groups.<br/>If no visibility is specified, the default project visibility will be used."`
+	Visibility *string `form:"visibility,omitempty" json:"visibility,omitempty" jsonschema:"description=Whether the created project should be visible to everyone\\, or only specific user/groups.<br/>If no visibility is specified\\, the default project visibility will be used."`
 }
 
 // ApiProjectsDeleteParams defines parameters for ApiProjectsDelete.
@@ -1649,10 +1649,10 @@ type ApiQualitygatesSearchParams struct {
 	PageSize *string `form:"pageSize,omitempty" json:"pageSize,omitempty" jsonschema:"description=Page size"`
 
 	// Query To search for projects containing this string. If this parameter is set, "selected" is set to "all".
-	Query *string `form:"query,omitempty" json:"query,omitempty" jsonschema:"description=To search for projects containing this string. If this parameter is set, \"selected\" is set to \"all\"."`
+	Query *string `form:"query,omitempty" json:"query,omitempty" jsonschema:"description=To search for projects containing this string. If this parameter is set\\, \"selected\" is set to \"all\"."`
 
 	// Selected Depending on the value, show only selected items (selected=selected), deselected items (selected=deselected), or all items with their selection status (selected=all).
-	Selected *string `form:"selected,omitempty" json:"selected,omitempty" jsonschema:"description=Depending on the value, show only selected items (selected=selected), deselected items (selected=deselected), or all items with their selection status (selected=all)."`
+	Selected *string `form:"selected,omitempty" json:"selected,omitempty" jsonschema:"description=Depending on the value\\, show only selected items (selected=selected)\\, deselected items (selected=deselected)\\, or all items with their selection status (selected=all)."`
 }
 
 // ApiQualitygatesSelectParams defines parameters for ApiQualitygatesSelect.
@@ -1724,7 +1724,7 @@ type ApiQualityprofilesActivateRulesParams struct {
 	Activation *string `form:"activation,omitempty" json:"activation,omitempty" jsonschema:"description=Filter rules that are activated or deactivated on the selected Quality profile. Ignored if the parameter 'qprofile' is not set."`
 
 	// ActiveSeverities Comma-separated list of activation severities, i.e the severity of rules in Quality profiles.
-	ActiveSeverities *string `form:"active_severities,omitempty" json:"active_severities,omitempty" jsonschema:"description=Comma-separated list of activation severities, i.e the severity of rules in Quality profiles."`
+	ActiveSeverities *string `form:"active_severities,omitempty" json:"active_severities,omitempty" jsonschema:"description=Comma-separated list of activation severities\\, i.e the severity of rules in Quality profiles."`
 
 	// Asc Ascending sort
 	Asc *string `form:"asc,omitempty" json:"asc,omitempty" jsonschema:"description=Ascending sort"`
@@ -1820,7 +1820,7 @@ type ApiQualityprofilesChangeParentParams struct {
 	Language string `form:"language" json:"language" jsonschema:"description=Quality profile language."`
 
 	// ParentQualityProfile New parent profile name. <br> If no profile is provided, the inheritance link with current parent profile (if any) is broken, which deactivates all rules which come from the parent and are not overridden.
-	ParentQualityProfile *string `form:"parentQualityProfile,omitempty" json:"parentQualityProfile,omitempty" jsonschema:"description=New parent profile name. <br> If no profile is provided, the inheritance link with current parent profile (if any) is broken, which deactivates all rules which come from the parent and are not overridden."`
+	ParentQualityProfile *string `form:"parentQualityProfile,omitempty" json:"parentQualityProfile,omitempty" jsonschema:"description=New parent profile name. <br> If no profile is provided\\, the inheritance link with current parent profile (if any) is broken\\, which deactivates all rules which come from the parent and are not overridden."`
 
 	// QualityProfile Quality profile name.
 	QualityProfile string `form:"qualityProfile" json:"qualityProfile" jsonschema:"description=Quality profile name."`
@@ -1844,7 +1844,7 @@ type ApiQualityprofilesChangelogParams struct {
 	Since *string `form:"since,omitempty" json:"since,omitempty" jsonschema:"description=Start date for the changelog (inclusive). <br>Either a date (server timezone) or datetime can be provided."`
 
 	// To End date for the changelog (exclusive, strictly before). <br>Either a date (server timezone) or datetime can be provided.
-	To *string `form:"to,omitempty" json:"to,omitempty" jsonschema:"description=End date for the changelog (exclusive, strictly before). <br>Either a date (server timezone) or datetime can be provided."`
+	To *string `form:"to,omitempty" json:"to,omitempty" jsonschema:"description=End date for the changelog (exclusive\\, strictly before). <br>Either a date (server timezone) or datetime can be provided."`
 }
 
 // ApiQualityprofilesCopyParams defines parameters for ApiQualityprofilesCopy.
@@ -1880,7 +1880,7 @@ type ApiQualityprofilesDeactivateRulesParams struct {
 	Activation *string `form:"activation,omitempty" json:"activation,omitempty" jsonschema:"description=Filter rules that are activated or deactivated on the selected Quality profile. Ignored if the parameter 'qprofile' is not set."`
 
 	// ActiveSeverities Comma-separated list of activation severities, i.e the severity of rules in Quality profiles.
-	ActiveSeverities *string `form:"active_severities,omitempty" json:"active_severities,omitempty" jsonschema:"description=Comma-separated list of activation severities, i.e the severity of rules in Quality profiles."`
+	ActiveSeverities *string `form:"active_severities,omitempty" json:"active_severities,omitempty" jsonschema:"description=Comma-separated list of activation severities\\, i.e the severity of rules in Quality profiles."`
 
 	// Asc Ascending sort
 	Asc *string `form:"asc,omitempty" json:"asc,omitempty" jsonschema:"description=Ascending sort"`
@@ -1958,13 +1958,13 @@ type ApiQualityprofilesDeleteParams struct {
 // ApiQualityprofilesExportParams defines parameters for ApiQualityprofilesExport.
 type ApiQualityprofilesExportParams struct {
 	// ExporterKey Output format. If left empty, the same format as api/qualityprofiles/backup is used. Possible values are described by api/qualityprofiles/exporters.
-	ExporterKey *string `form:"exporterKey,omitempty" json:"exporterKey,omitempty" jsonschema:"description=Output format. If left empty, the same format as api/qualityprofiles/backup is used. Possible values are described by api/qualityprofiles/exporters."`
+	ExporterKey *string `form:"exporterKey,omitempty" json:"exporterKey,omitempty" jsonschema:"description=Output format. If left empty\\, the same format as api/qualityprofiles/backup is used. Possible values are described by api/qualityprofiles/exporters."`
 
 	// Language Quality profile language
 	Language string `form:"language" json:"language" jsonschema:"description=Quality profile language"`
 
 	// QualityProfile Quality profile name to export. If left empty, the default profile for the language is exported.
-	QualityProfile *string `form:"qualityProfile,omitempty" json:"qualityProfile,omitempty" jsonschema:"description=Quality profile name to export. If left empty, the default profile for the language is exported."`
+	QualityProfile *string `form:"qualityProfile,omitempty" json:"qualityProfile,omitempty" jsonschema:"description=Quality profile name to export. If left empty\\, the default profile for the language is exported."`
 }
 
 // ApiQualityprofilesInheritanceParams defines parameters for ApiQualityprofilesInheritance.
@@ -1991,7 +1991,7 @@ type ApiQualityprofilesProjectsParams struct {
 	Q *string `form:"q,omitempty" json:"q,omitempty" jsonschema:"description=Limit search to projects that contain the supplied string."`
 
 	// Selected Depending on the value, show only selected items (selected=selected), deselected items (selected=deselected), or all items with their selection status (selected=all).
-	Selected *string `form:"selected,omitempty" json:"selected,omitempty" jsonschema:"description=Depending on the value, show only selected items (selected=selected), deselected items (selected=deselected), or all items with their selection status (selected=all)."`
+	Selected *string `form:"selected,omitempty" json:"selected,omitempty" jsonschema:"description=Depending on the value\\, show only selected items (selected=selected)\\, deselected items (selected=deselected)\\, or all items with their selection status (selected=all)."`
 }
 
 // ApiQualityprofilesRemoveProjectParams defines parameters for ApiQualityprofilesRemoveProject.
@@ -2018,16 +2018,16 @@ type ApiQualityprofilesRenameParams struct {
 // ApiQualityprofilesRestoreParams defines parameters for ApiQualityprofilesRestore.
 type ApiQualityprofilesRestoreParams struct {
 	// Backup A profile backup file in XML format, as generated by api/qualityprofiles/backup or the former api/profiles/backup.
-	Backup string `form:"backup" json:"backup" jsonschema:"description=A profile backup file in XML format, as generated by api/qualityprofiles/backup or the former api/profiles/backup."`
+	Backup string `form:"backup" json:"backup" jsonschema:"description=A profile backup file in XML format\\, as generated by api/qualityprofiles/backup or the former api/profiles/backup."`
 }
 
 // ApiQualityprofilesSearchParams defines parameters for ApiQualityprofilesSearch.
 type ApiQualityprofilesSearchParams struct {
 	// Defaults If set to true, return only the quality profiles marked as default for each language
-	Defaults *string `form:"defaults,omitempty" json:"defaults,omitempty" jsonschema:"description=If set to true, return only the quality profiles marked as default for each language"`
+	Defaults *string `form:"defaults,omitempty" json:"defaults,omitempty" jsonschema:"description=If set to true\\, return only the quality profiles marked as default for each language"`
 
 	// Language Language key. If provided, only profiles for the given language are returned.
-	Language *string `form:"language,omitempty" json:"language,omitempty" jsonschema:"description=Language key. If provided, only profiles for the given language are returned."`
+	Language *string `form:"language,omitempty" json:"language,omitempty" jsonschema:"description=Language key. If provided\\, only profiles for the given language are returned."`
 
 	// Project Project key
 	Project *string `form:"project,omitempty" json:"project,omitempty" jsonschema:"description=Project key"`
@@ -2057,10 +2057,10 @@ type ApiRulesCreateParams struct {
 	Name string `form:"name" json:"name" jsonschema:"description=Rule name"`
 
 	// Params Parameters as semi-colon list of <key>=<value>, for example 'params=key1=v1;key2=v2' (Only for custom rule)
-	Params *string `form:"params,omitempty" json:"params,omitempty" jsonschema:"description=Parameters as semi-colon list of <key>=<value>, for example 'params=key1=v1;key2=v2' (Only for custom rule)"`
+	Params *string `form:"params,omitempty" json:"params,omitempty" jsonschema:"description=Parameters as semi-colon list of <key>=<value>\\, for example 'params=key1=v1;key2=v2' (Only for custom rule)"`
 
 	// PreventReactivation If set to true and if the rule has been deactivated (status 'REMOVED'), a status 409 will be returned
-	PreventReactivation *string `form:"preventReactivation,omitempty" json:"preventReactivation,omitempty" jsonschema:"description=If set to true and if the rule has been deactivated (status 'REMOVED'), a status 409 will be returned"`
+	PreventReactivation *string `form:"preventReactivation,omitempty" json:"preventReactivation,omitempty" jsonschema:"description=If set to true and if the rule has been deactivated (status 'REMOVED')\\, a status 409 will be returned"`
 
 	// Severity Rule severity
 	Severity *string `form:"severity,omitempty" json:"severity,omitempty" jsonschema:"description=Rule severity"`
@@ -2084,7 +2084,7 @@ type ApiRulesDeleteParams struct {
 // ApiRulesRepositoriesParams defines parameters for ApiRulesRepositories.
 type ApiRulesRepositoriesParams struct {
 	// Language A language key; if provided, only repositories for the given language will be returned
-	Language *string `form:"language,omitempty" json:"language,omitempty" jsonschema:"description=A language key; if provided, only repositories for the given language will be returned"`
+	Language *string `form:"language,omitempty" json:"language,omitempty" jsonschema:"description=A language key; if provided\\, only repositories for the given language will be returned"`
 
 	// Q A pattern to match repository keys/names against
 	Q *string `form:"q,omitempty" json:"q,omitempty" jsonschema:"description=A pattern to match repository keys/names against"`
@@ -2096,7 +2096,7 @@ type ApiRulesSearchParams struct {
 	Activation *string `form:"activation,omitempty" json:"activation,omitempty" jsonschema:"description=Filter rules that are activated or deactivated on the selected Quality profile. Ignored if the parameter 'qprofile' is not set."`
 
 	// ActiveSeverities Comma-separated list of activation severities, i.e the severity of rules in Quality profiles.
-	ActiveSeverities *string `form:"active_severities,omitempty" json:"active_severities,omitempty" jsonschema:"description=Comma-separated list of activation severities, i.e the severity of rules in Quality profiles."`
+	ActiveSeverities *string `form:"active_severities,omitempty" json:"active_severities,omitempty" jsonschema:"description=Comma-separated list of activation severities\\, i.e the severity of rules in Quality profiles."`
 
 	// Asc Ascending sort
 	Asc *string `form:"asc,omitempty" json:"asc,omitempty" jsonschema:"description=Ascending sort"`
@@ -2108,7 +2108,7 @@ type ApiRulesSearchParams struct {
 	Cwe *string `form:"cwe,omitempty" json:"cwe,omitempty" jsonschema:"description=Comma-separated list of CWE identifiers. Use 'unknown' to select rules not associated to any CWE."`
 
 	// F Comma-separated list of additional fields to be returned in the response. All the fields are returned by default, except actives.
-	F *string `form:"f,omitempty" json:"f,omitempty" jsonschema:"description=Comma-separated list of additional fields to be returned in the response. All the fields are returned by default, except actives."`
+	F *string `form:"f,omitempty" json:"f,omitempty" jsonschema:"description=Comma-separated list of additional fields to be returned in the response. All the fields are returned by default\\, except actives."`
 
 	// Facets Comma-separated list of the facets to be computed. No facet is computed by default.
 	Facets *string `form:"facets,omitempty" json:"facets,omitempty" jsonschema:"description=Comma-separated list of the facets to be computed. No facet is computed by default."`
@@ -2207,7 +2207,7 @@ type ApiRulesUpdateParams struct {
 	Name *string `form:"name,omitempty" json:"name,omitempty" jsonschema:"description=Rule name (mandatory for custom rule)"`
 
 	// Params Parameters as semi-colon list of <key>=<value>, for example 'params=key1=v1;key2=v2' (Only when updating a custom rule)
-	Params *string `form:"params,omitempty" json:"params,omitempty" jsonschema:"description=Parameters as semi-colon list of <key>=<value>, for example 'params=key1=v1;key2=v2' (Only when updating a custom rule)"`
+	Params *string `form:"params,omitempty" json:"params,omitempty" jsonschema:"description=Parameters as semi-colon list of <key>=<value>\\, for example 'params=key1=v1;key2=v2' (Only when updating a custom rule)"`
 
 	// RemediationFnBaseEffort Base effort of the remediation function of the rule
 	RemediationFnBaseEffort *string `form:"remediation_fn_base_effort,omitempty" json:"remediation_fn_base_effort,omitempty" jsonschema:"description=Base effort of the remediation function of the rule"`
@@ -2249,16 +2249,16 @@ type ApiSettingsSetParams struct {
 	Component *string `form:"component,omitempty" json:"component,omitempty" jsonschema:"description=Component key"`
 
 	// FieldValues Setting field values. To set several values, the parameter must be called once for each value.
-	FieldValues *string `form:"fieldValues,omitempty" json:"fieldValues,omitempty" jsonschema:"description=Setting field values. To set several values, the parameter must be called once for each value."`
+	FieldValues *string `form:"fieldValues,omitempty" json:"fieldValues,omitempty" jsonschema:"description=Setting field values. To set several values\\, the parameter must be called once for each value."`
 
 	// Key Setting key
 	Key string `form:"key" json:"key" jsonschema:"description=Setting key"`
 
 	// Value Setting value. To reset a value, please use the reset web service.
-	Value *string `form:"value,omitempty" json:"value,omitempty" jsonschema:"description=Setting value. To reset a value, please use the reset web service."`
+	Value *string `form:"value,omitempty" json:"value,omitempty" jsonschema:"description=Setting value. To reset a value\\, please use the reset web service."`
 
 	// Values Setting multi value. To set several values, the parameter must be called once for each value.
-	Values *string `form:"values,omitempty" json:"values,omitempty" jsonschema:"description=Setting multi value. To set several values, the parameter must be called once for each value."`
+	Values *string `form:"values,omitempty" json:"values,omitempty" jsonschema:"description=Setting multi value. To set several values\\, the parameter must be called once for each value."`
 }
 
 // ApiSettingsValuesParams defines parameters for ApiSettingsValues.
@@ -2279,7 +2279,7 @@ type ApiSourcesRawParams struct {
 // ApiSourcesScmParams defines parameters for ApiSourcesScm.
 type ApiSourcesScmParams struct {
 	// CommitsByLine Group lines by SCM commit if value is false, else display commits for each line, even if two consecutive lines relate to the same commit.
-	CommitsByLine *string `form:"commits_by_line,omitempty" json:"commits_by_line,omitempty" jsonschema:"description=Group lines by SCM commit if value is false, else display commits for each line, even if two consecutive lines relate to the same commit."`
+	CommitsByLine *string `form:"commits_by_line,omitempty" json:"commits_by_line,omitempty" jsonschema:"description=Group lines by SCM commit if value is false\\, else display commits for each line\\, even if two consecutive lines relate to the same commit."`
 
 	// From First line to return. Starts at 1
 	From *string `form:"from,omitempty" json:"from,omitempty" jsonschema:"description=First line to return. Starts at 1"`
@@ -2306,7 +2306,7 @@ type ApiSourcesShowParams struct {
 // ApiSystemChangeLogLevelParams defines parameters for ApiSystemChangeLogLevel.
 type ApiSystemChangeLogLevelParams struct {
 	// Level The new level. Be cautious: DEBUG, and even more TRACE, may have performance impacts.
-	Level string `form:"level" json:"level" jsonschema:"description=The new level. Be cautious: DEBUG, and even more TRACE, may have performance impacts."`
+	Level string `form:"level" json:"level" jsonschema:"description=The new level. Be cautious: DEBUG\\, and even more TRACE\\, may have performance impacts."`
 }
 
 // ApiSystemLogsParams defines parameters for ApiSystemLogs.
@@ -2318,7 +2318,7 @@ type ApiSystemLogsParams struct {
 // ApiUserGroupsAddUserParams defines parameters for ApiUserGroupsAddUser.
 type ApiUserGroupsAddUserParams struct {
 	// Id Group id, use 'name' instead
-	Id *string `form:"id,omitempty" json:"id,omitempty" jsonschema:"description=Group id, use 'name' instead"`
+	Id *string `form:"id,omitempty" json:"id,omitempty" jsonschema:"description=Group id\\, use 'name' instead"`
 
 	// Login User login
 	Login *string `form:"login,omitempty" json:"login,omitempty" jsonschema:"description=User login"`
@@ -2339,7 +2339,7 @@ type ApiUserGroupsCreateParams struct {
 // ApiUserGroupsDeleteParams defines parameters for ApiUserGroupsDelete.
 type ApiUserGroupsDeleteParams struct {
 	// Id Group id, use 'name' instead
-	Id *string `form:"id,omitempty" json:"id,omitempty" jsonschema:"description=Group id, use 'name' instead"`
+	Id *string `form:"id,omitempty" json:"id,omitempty" jsonschema:"description=Group id\\, use 'name' instead"`
 
 	// Name Group name
 	Name *string `form:"name,omitempty" json:"name,omitempty" jsonschema:"description=Group name"`
@@ -2348,7 +2348,7 @@ type ApiUserGroupsDeleteParams struct {
 // ApiUserGroupsRemoveUserParams defines parameters for ApiUserGroupsRemoveUser.
 type ApiUserGroupsRemoveUserParams struct {
 	// Id Group id, use 'name' instead
-	Id *string `form:"id,omitempty" json:"id,omitempty" jsonschema:"description=Group id, use 'name' instead"`
+	Id *string `form:"id,omitempty" json:"id,omitempty" jsonschema:"description=Group id\\, use 'name' instead"`
 
 	// Login User login
 	Login *string `form:"login,omitempty" json:"login,omitempty" jsonschema:"description=User login"`
@@ -2378,19 +2378,19 @@ type ApiUserGroupsUpdateParams struct {
 	CurrentName *string `form:"currentName,omitempty" json:"currentName,omitempty" jsonschema:"description=Name of the group to be updated. Mandatory unless 'id' is used."`
 
 	// Description New optional description for the group. A group description cannot be larger than 200 characters. If value is not defined, then description is not changed.
-	Description *string `form:"description,omitempty" json:"description,omitempty" jsonschema:"description=New optional description for the group. A group description cannot be larger than 200 characters. If value is not defined, then description is not changed."`
+	Description *string `form:"description,omitempty" json:"description,omitempty" jsonschema:"description=New optional description for the group. A group description cannot be larger than 200 characters. If value is not defined\\, then description is not changed."`
 
 	// Id Identifier of the group. Use 'currentName' instead.
 	Id *string `form:"id,omitempty" json:"id,omitempty" jsonschema:"description=Identifier of the group. Use 'currentName' instead."`
 
 	// Name New optional name for the group. A group name cannot be larger than 255 characters and must be unique. Value 'anyone' (whatever the case) is reserved and cannot be used. If value is empty or not defined, then name is not changed.
-	Name *string `form:"name,omitempty" json:"name,omitempty" jsonschema:"description=New optional name for the group. A group name cannot be larger than 255 characters and must be unique. Value 'anyone' (whatever the case) is reserved and cannot be used. If value is empty or not defined, then name is not changed."`
+	Name *string `form:"name,omitempty" json:"name,omitempty" jsonschema:"description=New optional name for the group. A group name cannot be larger than 255 characters and must be unique. Value 'anyone' (whatever the case) is reserved and cannot be used. If value is empty or not defined\\, then name is not changed."`
 }
 
 // ApiUserGroupsUsersParams defines parameters for ApiUserGroupsUsers.
 type ApiUserGroupsUsersParams struct {
 	// Id Group id, use 'name' instead
-	Id *string `form:"id,omitempty" json:"id,omitempty" jsonschema:"description=Group id, use 'name' instead"`
+	Id *string `form:"id,omitempty" json:"id,omitempty" jsonschema:"description=Group id\\, use 'name' instead"`
 
 	// Name Group name
 	Name *string `form:"name,omitempty" json:"name,omitempty" jsonschema:"description=Group name"`
@@ -2405,16 +2405,16 @@ type ApiUserGroupsUsersParams struct {
 	Q *string `form:"q,omitempty" json:"q,omitempty" jsonschema:"description=Limit search to names or logins that contain the supplied string."`
 
 	// Selected Depending on the value, show only selected items (selected=selected), deselected items (selected=deselected), or all items with their selection status (selected=all).
-	Selected *string `form:"selected,omitempty" json:"selected,omitempty" jsonschema:"description=Depending on the value, show only selected items (selected=selected), deselected items (selected=deselected), or all items with their selection status (selected=all)."`
+	Selected *string `form:"selected,omitempty" json:"selected,omitempty" jsonschema:"description=Depending on the value\\, show only selected items (selected=selected)\\, deselected items (selected=deselected)\\, or all items with their selection status (selected=all)."`
 }
 
 // ApiUserTokensGenerateParams defines parameters for ApiUserTokensGenerate.
 type ApiUserTokensGenerateParams struct {
 	// ExpirationDate The expiration date of the token being generated, in ISO 8601 format (YYYY-MM-DD). If not set, default to no expiration.
-	ExpirationDate *string `form:"expirationDate,omitempty" json:"expirationDate,omitempty" jsonschema:"description=The expiration date of the token being generated, in ISO 8601 format (YYYY-MM-DD). If not set, default to no expiration."`
+	ExpirationDate *string `form:"expirationDate,omitempty" json:"expirationDate,omitempty" jsonschema:"description=The expiration date of the token being generated\\, in ISO 8601 format (YYYY-MM-DD). If not set\\, default to no expiration."`
 
 	// Login User login. If not set, the token is generated for the authenticated user.
-	Login *string `form:"login,omitempty" json:"login,omitempty" jsonschema:"description=User login. If not set, the token is generated for the authenticated user."`
+	Login *string `form:"login,omitempty" json:"login,omitempty" jsonschema:"description=User login. If not set\\, the token is generated for the authenticated user."`
 
 	// Name Token name
 	Name string `form:"name" json:"name" jsonschema:"description=Token name"`
@@ -2423,7 +2423,7 @@ type ApiUserTokensGenerateParams struct {
 	ProjectKey *string `form:"projectKey,omitempty" json:"projectKey,omitempty" jsonschema:"description=The key of the only project that can be analyzed by the PROJECT_ANALYSIS_TOKEN being generated."`
 
 	// Type Token Type. If this parameters is set to PROJECT_ANALYSIS_TOKEN, it is necessary to provide the projectKey parameter too.
-	Type *string `form:"type,omitempty" json:"type,omitempty" jsonschema:"description=Token Type. If this parameters is set to PROJECT_ANALYSIS_TOKEN, it is necessary to provide the projectKey parameter too."`
+	Type *string `form:"type,omitempty" json:"type,omitempty" jsonschema:"description=Token Type. If this parameters is set to PROJECT_ANALYSIS_TOKEN\\, it is necessary to provide the projectKey parameter too."`
 }
 
 // ApiUserTokensRevokeParams defines parameters for ApiUserTokensRevoke.
@@ -2474,10 +2474,10 @@ type ApiUsersCreateParams struct {
 	Name string `form:"name" json:"name" jsonschema:"description=User name"`
 
 	// Password User password. Only mandatory when creating local user, otherwise it should not be set
-	Password *string `form:"password,omitempty" json:"password,omitempty" jsonschema:"description=User password. Only mandatory when creating local user, otherwise it should not be set"`
+	Password *string `form:"password,omitempty" json:"password,omitempty" jsonschema:"description=User password. Only mandatory when creating local user\\, otherwise it should not be set"`
 
 	// ScmAccount List of SCM accounts. To set several values, the parameter must be called once for each value.
-	ScmAccount *string `form:"scmAccount,omitempty" json:"scmAccount,omitempty" jsonschema:"description=List of SCM accounts. To set several values, the parameter must be called once for each value."`
+	ScmAccount *string `form:"scmAccount,omitempty" json:"scmAccount,omitempty" jsonschema:"description=List of SCM accounts. To set several values\\, the parameter must be called once for each value."`
 }
 
 // ApiUsersDeactivateParams defines parameters for ApiUsersDeactivate.
@@ -2504,7 +2504,7 @@ type ApiUsersGroupsParams struct {
 	Q *string `form:"q,omitempty" json:"q,omitempty" jsonschema:"description=Limit search to group names that contain the supplied string."`
 
 	// Selected Depending on the value, show only selected items (selected=selected), deselected items (selected=deselected), or all items with their selection status (selected=all).
-	Selected *string `form:"selected,omitempty" json:"selected,omitempty" jsonschema:"description=Depending on the value, show only selected items (selected=selected), deselected items (selected=deselected), or all items with their selection status (selected=all)."`
+	Selected *string `form:"selected,omitempty" json:"selected,omitempty" jsonschema:"description=Depending on the value\\, show only selected items (selected=selected)\\, deselected items (selected=deselected)\\, or all items with their selection status (selected=all)."`
 }
 
 // ApiUsersSearchParams defines parameters for ApiUsersSearch.
@@ -2522,7 +2522,7 @@ type ApiUsersSearchParams struct {
 	Ps *string `form:"ps,omitempty" json:"ps,omitempty" jsonschema:"description=Page size. Must be greater than 0 and less or equal than 500"`
 
 	// Q Filter on login, name and email.<br />This parameter can either be case sensitive and perform an exact match, or case insensitive and perform a partial match (contains), depending on the scenario:<br /><ul> <li> If the search query is <em>less or equal to 15 characters</em>, then the query is <em>case insensitive</em>, and will match any login, name, or email, that <em>contains</em> the search query. </li> <li> If the search query is <em>greater than 15 characters</em>, then the query becomes <em>case sensitive</em>, and will match any login, name, or email, that <em>exactly matches</em> the search query. </li></ul>
-	Q *string `form:"q,omitempty" json:"q,omitempty" jsonschema:"description=Filter on login, name and email.<br />This parameter can either be case sensitive and perform an exact match, or case insensitive and perform a partial match (contains), depending on the scenario:<br /><ul> <li> If the search query is <em>less or equal to 15 characters</em>, then the query is <em>case insensitive</em>, and will match any login, name, or email, that <em>contains</em> the search query. </li> <li> If the search query is <em>greater than 15 characters</em>, then the query becomes <em>case sensitive</em>, and will match any login, name, or email, that <em>exactly matches</em> the search query. </li></ul>"`
+	Q *string `form:"q,omitempty" json:"q,omitempty" jsonschema:"description=Filter on login\\, name and email.<br />This parameter can either be case sensitive and perform an exact match\\, or case insensitive and perform a partial match (contains)\\, depending on the scenario:<br /><ul> <li> If the search query is <em>less or equal to 15 characters</em>\\, then the query is <em>case insensitive</em>\\, and will match any login\\, name\\, or email\\, that <em>contains</em> the search query. </li> <li> If the search query is <em>greater than 15 characters</em>\\, then the query becomes <em>case sensitive</em>\\, and will match any login\\, name\\, or email\\, that <em>exactly matches</em> the search query. </li></ul>"`
 }
 
 // ApiUsersUpdateParams defines parameters for ApiUsersUpdate.
@@ -2537,7 +2537,7 @@ type ApiUsersUpdateParams struct {
 	Name *string `form:"name,omitempty" json:"name,omitempty" jsonschema:"description=User name"`
 
 	// ScmAccount SCM accounts. To set several values, the parameter must be called once for each value.
-	ScmAccount *string `form:"scmAccount,omitempty" json:"scmAccount,omitempty" jsonschema:"description=SCM accounts. To set several values, the parameter must be called once for each value."`
+	ScmAccount *string `form:"scmAccount,omitempty" json:"scmAccount,omitempty" jsonschema:"description=SCM accounts. To set several values\\, the parameter must be called once for each value."`
 }
 
 // ApiUsersUpdateIdentityProviderParams defines parameters for ApiUsersUpdateIdentityProvider.
@@ -2546,7 +2546,7 @@ type ApiUsersUpdateIdentityProviderParams struct {
 	Login string `form:"login" json:"login" jsonschema:"description=User login"`
 
 	// NewExternalIdentity New external identity, usually the login used in the authentication system. If not provided previous identity will be used.
-	NewExternalIdentity *string `form:"newExternalIdentity,omitempty" json:"newExternalIdentity,omitempty" jsonschema:"description=New external identity, usually the login used in the authentication system. If not provided previous identity will be used."`
+	NewExternalIdentity *string `form:"newExternalIdentity,omitempty" json:"newExternalIdentity,omitempty" jsonschema:"description=New external identity\\, usually the login used in the authentication system. If not provided previous identity will be used."`
 
 	// NewExternalProvider New external provider. Only authentication system installed are available. Use 'LDAP' identity provider for single server LDAP setup.User 'LDAP_{serverKey}' identity provider for multiple LDAP server setup.
 	NewExternalProvider string `form:"newExternalProvider" json:"newExternalProvider" jsonschema:"description=New external provider. Only authentication system installed are available. Use 'LDAP' identity provider for single server LDAP setup.User 'LDAP_{serverKey}' identity provider for multiple LDAP server setup."`
@@ -2570,16 +2570,16 @@ type ApiWebhooksCreateParams struct {
 	Project *string `form:"project,omitempty" json:"project,omitempty" jsonschema:"description=The key of the project that will own the webhook"`
 
 	// Secret If provided, secret will be used as the key to generate the HMAC hex (lowercase) digest value in the 'X-Sonar-Webhook-HMAC-SHA256' header
-	Secret *string `form:"secret,omitempty" json:"secret,omitempty" jsonschema:"description=If provided, secret will be used as the key to generate the HMAC hex (lowercase) digest value in the 'X-Sonar-Webhook-HMAC-SHA256' header"`
+	Secret *string `form:"secret,omitempty" json:"secret,omitempty" jsonschema:"description=If provided\\, secret will be used as the key to generate the HMAC hex (lowercase) digest value in the 'X-Sonar-Webhook-HMAC-SHA256' header"`
 
 	// Url Server endpoint that will receive the webhook payload, for example 'http://my_server/foo'. If HTTP Basic authentication is used, HTTPS is recommended to avoid man in the middle attacks. Example: 'https://myLogin:myPassword@my_server/foo'
-	Url string `form:"url" json:"url" jsonschema:"description=Server endpoint that will receive the webhook payload, for example 'http://my_server/foo'. If HTTP Basic authentication is used, HTTPS is recommended to avoid man in the middle attacks. Example: 'https://myLogin:myPassword@my_server/foo'"`
+	Url string `form:"url" json:"url" jsonschema:"description=Server endpoint that will receive the webhook payload\\, for example 'http://my_server/foo'. If HTTP Basic authentication is used\\, HTTPS is recommended to avoid man in the middle attacks. Example: 'https://myLogin:myPassword@my_server/foo'"`
 }
 
 // ApiWebhooksDeleteParams defines parameters for ApiWebhooksDelete.
 type ApiWebhooksDeleteParams struct {
 	// Webhook The key of the webhook to be deleted, auto-generated value can be obtained through api/webhooks/create or api/webhooks/list
-	Webhook string `form:"webhook" json:"webhook" jsonschema:"description=The key of the webhook to be deleted, auto-generated value can be obtained through api/webhooks/create or api/webhooks/list"`
+	Webhook string `form:"webhook" json:"webhook" jsonschema:"description=The key of the webhook to be deleted\\, auto-generated value can be obtained through api/webhooks/create or api/webhooks/list"`
 }
 
 // ApiWebhooksDeliveriesParams defines parameters for ApiWebhooksDeliveries.
@@ -2597,7 +2597,7 @@ type ApiWebhooksDeliveriesParams struct {
 	Ps *string `form:"ps,omitempty" json:"ps,omitempty" jsonschema:"description=Page size. Must be greater than 0 and less than 500"`
 
 	// Webhook Key of the webhook that triggered those deliveries, auto-generated value that can be obtained through api/webhooks/create or api/webhooks/list
-	Webhook *string `form:"webhook,omitempty" json:"webhook,omitempty" jsonschema:"description=Key of the webhook that triggered those deliveries, auto-generated value that can be obtained through api/webhooks/create or api/webhooks/list"`
+	Webhook *string `form:"webhook,omitempty" json:"webhook,omitempty" jsonschema:"description=Key of the webhook that triggered those deliveries\\, auto-generated value that can be obtained through api/webhooks/create or api/webhooks/list"`
 }
 
 // ApiWebhooksDeliveryParams defines parameters for ApiWebhooksDelivery.
@@ -2618,13 +2618,13 @@ type ApiWebhooksUpdateParams struct {
 	Name string `form:"name" json:"name" jsonschema:"description=new name of the webhook"`
 
 	// Secret If provided, secret will be used as the key to generate the HMAC hex (lowercase) digest value in the 'X-Sonar-Webhook-HMAC-SHA256' header. If blank, any secret previously configured will be removed. If not set, the secret will remain unchanged.
-	Secret *string `form:"secret,omitempty" json:"secret,omitempty" jsonschema:"description=If provided, secret will be used as the key to generate the HMAC hex (lowercase) digest value in the 'X-Sonar-Webhook-HMAC-SHA256' header. If blank, any secret previously configured will be removed. If not set, the secret will remain unchanged."`
+	Secret *string `form:"secret,omitempty" json:"secret,omitempty" jsonschema:"description=If provided\\, secret will be used as the key to generate the HMAC hex (lowercase) digest value in the 'X-Sonar-Webhook-HMAC-SHA256' header. If blank\\, any secret previously configured will be removed. If not set\\, the secret will remain unchanged."`
 
 	// Url new url to be called by the webhook
 	Url string `form:"url" json:"url" jsonschema:"description=new url to be called by the webhook"`
 
 	// Webhook The key of the webhook to be updated, auto-generated value can be obtained through api/webhooks/create or api/webhooks/list
-	Webhook string `form:"webhook" json:"webhook" jsonschema:"description=The key of the webhook to be updated, auto-generated value can be obtained through api/webhooks/create or api/webhooks/list"`
+	Webhook string `form:"webhook" json:"webhook" jsonschema:"description=The key of the webhook to be updated\\, auto-generated value can be obtained through api/webhooks/create or api/webhooks/list"`
 }
 
 // ApiWebservicesListParams defines parameters for ApiWebservicesList.
