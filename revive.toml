@@ -1,0 +1,15 @@
+enableAllRules = true
+errorCode = 1
+warningCode = 2
+
+[rule.add-constant]
+Disabled = true
+
+[rule.exported]
+Disabled = true
+
+[rule.line-length-limit]
+arguments = [119]
+
+[rule.package-comments]
+Disabled = true

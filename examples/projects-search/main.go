@@ -9,7 +9,7 @@ import (
 	client "github.com/9506hqwy/sonar-client-go/pkg/sonarqube"
 )
 
-func basicAuth(ctx context.Context, req *http.Request) error {
+func basicAuth(_ context.Context, req *http.Request) error {
 	req.SetBasicAuth("admin", "admin")
 	return nil
 }
@@ -33,6 +33,6 @@ func main() {
 	}
 
 	for _, project := range *resp.JSON2XX.Components {
-		fmt.Printf("Project Key: %s, Name: %s\n", *project.Key, *project.Name)
+		_, _ = fmt.Printf("Project Key: %s, Name: %s\n", *project.Key, *project.Name)
 	}
 }

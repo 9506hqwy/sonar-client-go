@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func basicAuth(ctx context.Context, req *http.Request) error {
+func basicAuth(_ context.Context, req *http.Request) error {
 	req.SetBasicAuth("admin", "admin")
 	return nil
 }
@@ -40,32 +40,32 @@ func assertHTTPStatus(t *testing.T, resp *http.Response, err error, msg any) {
 
 func assertResponseBody(t *testing.T, resp any) {
 	if resp == nil {
-		t.Errorf("Error: No Content")
+		t.Error("Error: No Content")
 	}
 }
 
 func TestMain(m *testing.M) {
-	//c, err := client()
-	//if err != nil {
-	//	panic(err)
-	//}
+	// c, err := client()
+	// if err != nil {
+	// 	panic(err)
+	// }
 
-	//cparams := ApiProjectsCreateParams{}
-	//cparams.Name = "Test Project"
-	//cparams.Project = "test_project"
-	//_, err = c.ApiProjectsCreateWithResponse(context.TODO(), &cparams, basicAuth)
-	//if err != nil {
-	//	panic(err)
-	//}
+	// cparams := ApiProjectsCreateParams{}
+	// cparams.Name = "Test Project"
+	// cparams.Project = "test_project"
+	// _, err = c.ApiProjectsCreateWithResponse(context.TODO(), &cparams, basicAuth)
+	// if err != nil {
+	// 	panic(err)
+	// }
 
 	m.Run()
 
-	//dparams := ApiProjectsDeleteParams{}
-	//dparams.Project = cparams.Project
-	//_, err = c.ApiProjectsDeleteWithResponse(context.TODO(), &dparams, basicAuth)
-	//if err != nil {
-	//	panic(err)
-	//}
+	// dparams := ApiProjectsDeleteParams{}
+	// dparams.Project = cparams.Project
+	// _, err = c.ApiProjectsDeleteWithResponse(context.TODO(), &dparams, basicAuth)
+	// if err != nil {
+	// 	panic(err)
+	// }
 }
 
 func TestApiAlmIntegrationsImportGitlabProjectWithResponse(t *testing.T) {
@@ -872,10 +872,10 @@ func TestApiNotificationsRemoveWithResponse(t *testing.T) {
 func TestApiPermissionsAddGroupWithResponse(t *testing.T) {
 	c := newClient(t)
 
-	groupId := "test_group_id"
+	groupID := "test_group_id"
 	projectKey := "test_project"
 	params := ApiPermissionsAddGroupParams{}
-	params.GroupId = &groupId
+	params.GroupId = &groupID
 	params.Permission = "user"
 	params.ProjectKey = &projectKey
 	resp, err := c.ApiPermissionsAddGroupWithResponse(context.TODO(), &params, basicAuth)
@@ -886,9 +886,9 @@ func TestApiPermissionsAddGroupWithResponse(t *testing.T) {
 func TestApiPermissionsAddGroupToTemplateWithResponse(t *testing.T) {
 	c := newClient(t)
 
-	groupId := "test_group_id"
+	groupID := "test_group_id"
 	params := ApiPermissionsAddGroupToTemplateParams{}
-	params.GroupId = &groupId
+	params.GroupId = &groupID
 	params.Permission = "user"
 	resp, err := c.ApiPermissionsAddGroupToTemplateWithResponse(context.TODO(), &params, basicAuth)
 
@@ -898,10 +898,10 @@ func TestApiPermissionsAddGroupToTemplateWithResponse(t *testing.T) {
 func TestApiPermissionsAddProjectCreatorToTemplateWithResponse(t *testing.T) {
 	c := newClient(t)
 
-	templateId := "test_template_id"
+	templateID := "test_template_id"
 	params := ApiPermissionsAddProjectCreatorToTemplateParams{}
 	params.Permission = "user"
-	params.TemplateId = &templateId
+	params.TemplateId = &templateID
 	resp, err := c.ApiPermissionsAddProjectCreatorToTemplateWithResponse(context.TODO(), &params, basicAuth)
 
 	assertHTTPStatus(t, resp.HTTPResponse, err, resp.JSONDefault)
@@ -921,11 +921,11 @@ func TestApiPermissionsAddUserWithResponse(t *testing.T) {
 func TestApiPermissionsAddUserToTemplateWithResponse(t *testing.T) {
 	c := newClient(t)
 
-	templateId := "test_template_id"
+	templateID := "test_template_id"
 	params := ApiPermissionsAddUserToTemplateParams{}
 	params.Login = "operator"
 	params.Permission = "user"
-	params.TemplateId = &templateId
+	params.TemplateId = &templateID
 	resp, err := c.ApiPermissionsAddUserToTemplateWithResponse(context.TODO(), &params, basicAuth)
 
 	assertHTTPStatus(t, resp.HTTPResponse, err, resp.JSONDefault)
@@ -935,10 +935,10 @@ func TestApiPermissionsApplyTemplateWithResponse(t *testing.T) {
 	c := newClient(t)
 
 	projectKey := "test_project"
-	templateId := "test_template_id"
+	templateID := "test_template_id"
 	params := ApiPermissionsApplyTemplateParams{}
 	params.ProjectKey = &projectKey
-	params.TemplateId = &templateId
+	params.TemplateId = &templateID
 	resp, err := c.ApiPermissionsApplyTemplateWithResponse(context.TODO(), &params, basicAuth)
 
 	assertHTTPStatus(t, resp.HTTPResponse, err, resp.JSONDefault)
@@ -947,9 +947,9 @@ func TestApiPermissionsApplyTemplateWithResponse(t *testing.T) {
 func TestApiPermissionsBulkApplyTemplateWithResponse(t *testing.T) {
 	c := newClient(t)
 
-	templateId := "test_template_id"
+	templateID := "test_template_id"
 	params := ApiPermissionsBulkApplyTemplateParams{}
-	params.TemplateId = &templateId
+	params.TemplateId = &templateID
 	resp, err := c.ApiPermissionsBulkApplyTemplateWithResponse(context.TODO(), &params, basicAuth)
 
 	assertHTTPStatus(t, resp.HTTPResponse, err, resp.JSONDefault)
@@ -969,9 +969,9 @@ func TestApiPermissionsCreateTemplateWithResponse(t *testing.T) {
 func TestApiPermissionsDeleteTemplateWithResponse(t *testing.T) {
 	c := newClient(t)
 
-	templateId := "test_template_id"
+	templateID := "test_template_id"
 	params := ApiPermissionsDeleteTemplateParams{}
-	params.TemplateId = &templateId
+	params.TemplateId = &templateID
 	resp, err := c.ApiPermissionsDeleteTemplateWithResponse(context.TODO(), &params, basicAuth)
 
 	assertHTTPStatus(t, resp.HTTPResponse, err, resp.JSONDefault)
@@ -980,10 +980,10 @@ func TestApiPermissionsDeleteTemplateWithResponse(t *testing.T) {
 func TestApiPermissionsRemoveGroupWithResponse(t *testing.T) {
 	c := newClient(t)
 
-	groupId := "test_group_id"
+	groupID := "test_group_id"
 	projectKey := "test_project"
 	params := ApiPermissionsRemoveGroupParams{}
-	params.GroupId = &groupId
+	params.GroupId = &groupID
 	params.Permission = "user"
 	params.ProjectKey = &projectKey
 	resp, err := c.ApiPermissionsRemoveGroupWithResponse(context.TODO(), &params, basicAuth)
@@ -994,12 +994,12 @@ func TestApiPermissionsRemoveGroupWithResponse(t *testing.T) {
 func TestApiPermissionsRemoveGroupFromTemplateWithResponse(t *testing.T) {
 	c := newClient(t)
 
-	groupId := "test_group_id"
-	templateId := "test_template_id"
+	groupID := "test_group_id"
+	templateID := "test_template_id"
 	params := ApiPermissionsRemoveGroupFromTemplateParams{}
-	params.GroupId = &groupId
+	params.GroupId = &groupID
 	params.Permission = "user"
-	params.TemplateId = &templateId
+	params.TemplateId = &templateID
 	resp, err := c.ApiPermissionsRemoveGroupFromTemplateWithResponse(context.TODO(), &params, basicAuth)
 
 	assertHTTPStatus(t, resp.HTTPResponse, err, resp.JSONDefault)
@@ -1008,10 +1008,10 @@ func TestApiPermissionsRemoveGroupFromTemplateWithResponse(t *testing.T) {
 func TestApiPermissionsRemoveProjectCreatorFromTemplateWithResponse(t *testing.T) {
 	c := newClient(t)
 
-	templateId := "test_template_id"
+	templateID := "test_template_id"
 	params := ApiPermissionsRemoveProjectCreatorFromTemplateParams{}
 	params.Permission = "user"
-	params.TemplateId = &templateId
+	params.TemplateId = &templateID
 	resp, err := c.ApiPermissionsRemoveProjectCreatorFromTemplateWithResponse(context.TODO(), &params, basicAuth)
 
 	assertHTTPStatus(t, resp.HTTPResponse, err, resp.JSONDefault)
@@ -1031,11 +1031,11 @@ func TestApiPermissionsRemoveUserWithResponse(t *testing.T) {
 func TestApiPermissionsRemoveUserFromTemplateWithResponse(t *testing.T) {
 	c := newClient(t)
 
-	templateId := "test_template_id"
+	templateID := "test_template_id"
 	params := ApiPermissionsRemoveUserFromTemplateParams{}
 	params.Login = "operator"
 	params.Permission = "user"
-	params.TemplateId = &templateId
+	params.TemplateId = &templateID
 	resp, err := c.ApiPermissionsRemoveUserFromTemplateWithResponse(context.TODO(), &params, basicAuth)
 
 	assertHTTPStatus(t, resp.HTTPResponse, err, resp.JSONDefault)
@@ -1054,9 +1054,9 @@ func TestApiPermissionsSearchTemplatesWithResponse(t *testing.T) {
 func TestApiPermissionsSetDefaultTemplateWithResponse(t *testing.T) {
 	c := newClient(t)
 
-	templateId := "test_template_id"
+	templateID := "test_template_id"
 	params := ApiPermissionsSetDefaultTemplateParams{}
-	params.TemplateId = &templateId
+	params.TemplateId = &templateID
 	resp, err := c.ApiPermissionsSetDefaultTemplateWithResponse(context.TODO(), &params, basicAuth)
 
 	assertHTTPStatus(t, resp.HTTPResponse, err, resp.JSONDefault)
@@ -1478,11 +1478,11 @@ func TestApiQualitygatesCreateWithResponse(t *testing.T) {
 func TestApiQualitygatesCreateConditionWithResponse(t *testing.T) {
 	c := newClient(t)
 
-	gateId := "test_gate_id"
+	gateID := "test_gate_id"
 	op := "GT"
 	params := ApiQualitygatesCreateConditionParams{}
 	params.Error = "0"
-	params.GateId = &gateId
+	params.GateId = &gateID
 	params.Metric = "vulnerabilities"
 	params.Op = &op
 	resp, err := c.ApiQualitygatesCreateConditionWithResponse(context.TODO(), &params, basicAuth)
@@ -1557,9 +1557,9 @@ func TestApiQualitygatesProjectStatusWithResponse(t *testing.T) {
 func TestApiQualitygatesRenameWithResponse(t *testing.T) {
 	c := newClient(t)
 
-	gateId := "test_gate_id"
+	gateID := "test_gate_id"
 	params := ApiQualitygatesRenameParams{}
-	params.Id = &gateId
+	params.Id = &gateID
 	params.Name = "Test GAte"
 	resp, err := c.ApiQualitygatesRenameWithResponse(context.TODO(), &params, basicAuth)
 
@@ -1569,9 +1569,9 @@ func TestApiQualitygatesRenameWithResponse(t *testing.T) {
 func TestApiQualitygatesSearchWithResponse(t *testing.T) {
 	c := newClient(t)
 
-	gateId := "test_gate_id"
+	gateID := "test_gate_id"
 	params := ApiQualitygatesSearchParams{}
-	params.GateId = &gateId
+	params.GateId = &gateID
 	resp, err := c.ApiQualitygatesSearchWithResponse(context.TODO(), &params, basicAuth)
 
 	assertHTTPStatus(t, resp.HTTPResponse, err, resp.JSONDefault)
@@ -1581,9 +1581,9 @@ func TestApiQualitygatesSearchWithResponse(t *testing.T) {
 func TestApiQualitygatesSelectWithResponse(t *testing.T) {
 	c := newClient(t)
 
-	gateId := "test_gate_id"
+	gateID := "test_gate_id"
 	params := ApiQualitygatesSelectParams{}
-	params.GateId = &gateId
+	params.GateId = &gateID
 	params.ProjectKey = "test_project"
 	resp, err := c.ApiQualitygatesSelectWithResponse(context.TODO(), &params, basicAuth)
 
